@@ -1,0 +1,4 @@
+#!/usr/bin/php
+<?php
+
+echo levenshtein($_SERVER['argv'][1], $_SERVER['argv'][2]), "\n";

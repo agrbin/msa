@@ -1,0 +1,64 @@
+!!! 2014-01-30 14:27:38  Started by agrbin@UNKNOWN on Thu Jan 30 14:27:38 2014
+
+!!! 2014-01-30 14:27:38  Doing step 10:  Building AMOS bank
+!!! 2014-01-30 14:27:38  Running: /home/agrbin/projekt/faks/bioinformatika/proj/amos/bin/bank-transact -c -z -b reads.bnk -m reads.afg
+START DATE: Thu Jan 30 14:27:38 2014
+Bank is: reads.bnk
+    0%                                            100%
+AFG ..................................................
+Messages read: 312
+Objects added: 312
+Objects deleted: 0
+Objects replaced: 0
+END DATE:   Thu Jan 30 14:27:38 2014
+!!! 2014-01-30 14:27:38  Done! Elapsed time:0d 0h 0m 0s
+
+!!! 2014-01-30 14:27:38  Doing step 20:  Running overlap
+!!! 2014-01-30 14:27:38  Running: /home/agrbin/projekt/faks/bioinformatika/proj/amos/bin/hash-overlap -B reads.bnk
+Starting on Thu Jan 30 14:27:38 2014
+
+Read bank is reads.bnk
+Alignment error rate is 0.06
+Minimum overlap bases is 40
+Be strand-specific: 0
+!!! 2014-01-30 14:27:39  Done! Elapsed time:0d 0h 0m 1s
+
+!!! 2014-01-30 14:27:39  Doing step 30:  Running contigger
+!!! 2014-01-30 14:27:39  Running: /home/agrbin/projekt/faks/bioinformatika/proj/amos/bin/tigger -b reads.bnk
+ Pulling reads from bank reads.bnk
+Pulled 155 reads from bank 
+ Pulling overlaps from bank reads.bnk
+Pulled 1221 overlaps from bank 
+ total contained reads hidden 131
+ number of contigs 4
+this pass containment size is 131
+131 containment reads added back on this pass 
+ sub-total contained reads unhidden 131
+ total contained reads unhidden 131
+ Writing layouts to bank reads.bnk
+!!! 2014-01-30 14:27:39  Done! Elapsed time:0d 0h 0m 0s
+
+!!! 2014-01-30 14:27:39  Doing step 40:  Running consensus
+!!! 2014-01-30 14:27:39  Running: /home/agrbin/projekt/faks/bioinformatika/proj/amos/bin/make-consensus -B -b reads.bnk
+Starting on Thu Jan 30 14:27:39 2014
+
+Read bank is reads.bnk
+Alignment error rate is 0.06
+Minimum overlap bases is 5
+Output will be written to the bank
+Input is being read from the bank 
+Processed 1 layouts
+!!! 2014-01-30 14:27:39  Done! Elapsed time:0d 0h 0m 0s
+
+!!! 2014-01-30 14:27:39  Doing step 50:  Outputting contigs
+!!! 2014-01-30 14:27:39  Running: /home/agrbin/projekt/faks/bioinformatika/proj/amos/bin/bank2contig reads.bnk > reads.contig
+Processing reads.bnk at Thu Jan 30 14:27:39 2014
+End: Thu Jan 30 14:27:39 2014
+!!! 2014-01-30 14:27:39  Done! Elapsed time:0d 0h 0m 0s
+
+!!! 2014-01-30 14:27:39  Doing step 60:  Converting to FastA file
+!!! 2014-01-30 14:27:39  Running: /home/agrbin/projekt/faks/bioinformatika/proj/amos/bin/bank2fasta -b reads.bnk > reads.fasta
+!!! 2014-01-30 14:27:39  Done! Elapsed time:0d 0h 0m 0s
+
+!!! END - Elapsed time: 0d 0h 0m 1s
+
