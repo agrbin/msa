@@ -1,4 +1,0 @@
-msa
-===
-
-multiple sequence aligner

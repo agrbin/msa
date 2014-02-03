@@ -1,0 +1,10 @@
+You should have C++ compiler that supports C++11 standard.
+
+Installation is simple (hope everything compiles without an error)
+
+  make && sudo make install
+
+After this operation, grbin-msa executable will be available in your path.
+
+Run that program to see usage instructions.
+

@@ -1,0 +1,73 @@
+This is implementation of multiple sequence alignment refining algorithm
+introduced in
+
+ReAligner: A Program for Refining DNA Sequence Multi-Alignments (1997)
+by Eric Anson, Eugene W. Myers.
+
+It is written in C++11, and doesn't require any third party library.
+
+See INSTALL for installation docs.
+
+Input/output formats for this implementation are identical to formats used in
+minimus mos.sourceforge.net/docs/pipeline/minimus.html. This is done in order
+to be able to compare efficiency for two implementations.
+
+Performance was tested on 4 small examples and a big one. Big example is
+consisted of 1016 sequences with align matrix width of 209354 columns.
+
+this was done on test_4 (number of columns 34330)
+
+radius, iterations, seconds, number of 'n's in consensus
+1, 9, 0m4.188s, 8768
+2, 10, 0m5.004s, 8345
+3, 10, 0m4.936s, 6929
+5, 15, 0m7.068s, 4581
+10, 18, 0m7.968s, 1815
+15, 11, 0m5.088s, 1041
+20, 4, 0m1.980s, 1040
+30, 3, 0m1.680s, 1041
+50, 3, 0m2.084s, 1041
+75, 3, 0m2.808s, 1041
+100, 3, 0m3.492s, 1041
+150, 3, 0m4.596s, 1041
+200, 3, 0m6.448s, 1041
+250, 3, 0m8.053s, 1041
+300, 3, 0m9.433s, 1041
+400, 3, 0m13.125s, 1041
+500, 3, 0m17.201s, 1041
+
+
+this was done on test_5 (~200000 columns)
+
+radius, iterations, seconds, number of 'n's in consensus
+1, 11, 0m35.586s, 53075
+2, 11, 0m38.090s, 50023
+3, 12, 0m40.571s, 41831
+5, 17, 0m54.727s, 30223
+10, 29, 1m31.766s, 20115
+15, 20, 1m3.976s, 16600
+20, 12, 0m40.271s, 15053
+30, 13, 0m49.459s, 13331
+50, 32, 2m35.550s, 12587
+75, 31, 3m14.132s, 10674
+100, 20, 2m34.770s, 10487
+150, 15, 2m29.633s, 10055
+200, 13, 2m51.507s, 8002
+250, 13, 3m31.725s, 8234
+300, 7, 2m16.749s, 7164
+400, 7, 3m12.188s, 6832
+500, 6, 3m32.593s, 6839
+750, 6, 5m54.610s, 7209
+1000, 7, 10m14.778s, 7209
+1500, 3, 8m19.115s, 7330
+2000, 4, 17m29.946s, 7547
+3000, 3, 24m50.605s, 6565
+5000, 3, 62m37.239s, 6798
+
+
+These tests are done in order to see how bandwidth in edit distance
+implementation (radius) changes execution preformance and results.
+
+When these results are compared to minimus results for make-consensus module it
+is clear that their implementation uses less time and generates better results
+:)

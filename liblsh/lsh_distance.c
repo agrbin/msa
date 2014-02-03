@@ -40,8 +40,8 @@ static int cmp_0_all_len = 0;
 
 /* n1*(2*K+1) */
 static char *rc = NULL;
-static int allocated_rcs = 0;
-#define RC(x, y) (rc[(x*double_K_plus_1) + y])
+static size_t allocated_rcs = 0;
+#define RC(x, y) (rc[((size_t)x * double_K_plus_1) + y])
 
 /*
  this library is not re-entrant because it uses static buffers.
@@ -69,9 +69,9 @@ void check_allocation() {
     cmpvals = (int*) realloc(cmpvals, (double_K_plus_1) * sizeof(int));
     allocated_width = (double_K_plus_1);
   }
-  if (allocated_rcs < n1 * (double_K_plus_1)) {
-    rc = (char*) realloc(rc, n1 * (double_K_plus_1));
-    allocated_rcs = n1 * (double_K_plus_1);
+  if (allocated_rcs < (size_t) n1 * (double_K_plus_1)) {
+    rc = (char*) realloc(rc, (size_t) n1 * (double_K_plus_1));
+    allocated_rcs = (size_t) n1 * (double_K_plus_1);
   }
   if (cmp_0_all_len < n2) {
     cmp_0_all = (int*) realloc(cmp_0_all, n2 * sizeof(int));

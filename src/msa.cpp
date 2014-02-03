@@ -52,6 +52,8 @@ int doit(
   FastaFile fasta(fasta_file);
   FastaFile output(cons_file);
   LayoutFile layout(layout_file);
+  // erase contents of cons_file
+  fclose(fopen(cons_file, "w"));
 
   if (!fasta.initialize()) {
     fprintf(stderr, "%s", fasta.getError().c_str());
